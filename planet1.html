@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head> 
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+    <title> Planet 1: Mood Check-in </title>
+    <link rel="stylesheet" href="styles.css"/>
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600&display=swap" rel="stylesheet">
+
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+
+    <div class="space-bg">
+        <canvas class="stars"></canvas>
+    </div>
+
+    <section id="planet1" class="planet mood-check">
+
+        <div class="alien-bot">
+            <p class="alien-greeting">
+                👽 Welcome, space traveller! <br>
+                How are you feeling today? 
+            </p>
+
+            <div class="mood-buttons">
+                <button data-mood="happy">🎉 Happy</button>
+                <button data-mood="stressed">🌀 Stressed</button>
+                <button data-mood="tired">😴 Tired</button>
+            </div>
+        </div>
+
+        <!-- mood planet thingy -->
+        <img src="pics/astronaut_on_planet.png" alt="Astronaut on Planet with Little Alien" class="mood-astronaut">
+        <img src="pics/glowing_mood_orb.png" alt="Glowing Mood Orb" class="mood-orb">
+
+    </section>
+
+    <script>
+        const canvas = document.querySelector('.stars');
+        const ctx = canvas.getContext('2d');
+
+        function resize() {
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+        }
+window.addEventListener('resize', resize);
+resize();
+
+function drawStars() {
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  for (let i = 0; i < 120; i++) {
+    ctx.beginPath();
+    ctx.arc(
+      Math.random() * canvas.width,
+      Math.random() * canvas.height,
+      Math.random() * 2 + 1,
+      0,
+      2 * Math.PI
+    );
+    ctx.fillStyle = '#fff';
+    ctx.fill();
+  }
+}
+drawStars();
+
+    </script>
+
+</body>
+
+</html>

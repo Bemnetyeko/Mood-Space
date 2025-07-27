@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+  <title> Planet 5: Resources </title>
+  <link rel="stylesheet" href="styles.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+  <!-- starry bg -->
+   <div class="space-bg">
+    <canvas class="stars"></canvas>
+   </div>
+
+  <div class="heading-container">
+    <h1>Resources</h1>
+  </div>
+
+  <div class="content-wrapper">
+    <div class="satellite-section">
+      <h2 class="satellite-title">Safety Satellite</h2>
+      <p class="intro-text"> 
+        You might just be one star in the galaxy...  
+        but without you, it wouldn't shine the same.  
+        You matter — always. And if you ever feel like you're floating too far, we're right here.
+      </p>
+
+      <div class="resource-nav">
+        <div class="nav-card" onclick="scrollToSection('talkSection')">
+          <span class="icon">🗣️</span>
+          <p>Want to talk?</p>
+        </div>
+
+        <div class="nav-card" onclick="scrollToSection('textSection')">
+          <span class="icon">💬</span>
+          <p>Prefer to text?</p>
+        </div>
+
+        <div class="nav-card" onclick="goToTools()">
+          <span class="icon">🧰</span>
+          <p>Tools/Downloads</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="satellite-section" id="talkSection">
+      <h2 class="satellite-title">🛰️ Safety Satellite</h2>
+      <p class="intro-text">Need help? Reach out now:</p>
+
+      <!-- hotlines -->
+      <div class="resource-buttons">
+        <button class="glow-btn">🪐 Emergency Line (SA): 10111</button>
+        <button class="glow-btn">🌠 Crisis Starline: 0800 456 789</button>
+        <button class="glow-btn">🌙 Mental Health Moonbase: 0800 567 567</button>
+        <button class="glow-btn">🌌 Lifeline Constellation: 0861 322 322</button>
+      </div>
+    </div>
+
+    <!-- text -->
+    <div class="text-links" id="textSection">
+        <a href="https://www.befrienders.org" target="_blank">💬 Befrienders Worldwide</a>
+        <a href="https://www.sadag.org/" target="_blank">💬 SADAG Online Chat</a>
+    </div>
+  </div>
+
+  <!-- tools/downloads -->
+  <div class="satellite-section" id="toolsSection">
+    <h2 class="satellite-title"> 🧰 Tools & Downloads </h2>
+    <ul class="tools-list">
+      <li><a href="https://www.calm.com/" target="_blank">🧘 Calm - Meditations & Sleep Stories </a></li>
+      <li><a href="https://headspace.com/" target="_blank">🌈 Headspace - Mindfulness App </a></li>
+      <li><a href="https://www.mind.org.uk/" target="_blank">📘 Mind - Coping Guides & Worksheets</a></li>
+      <li><a href="downloads/self-care-planner.pdf" download>📝 Self-Care Planner (PDF)</a></li>
+    </ul>
+  </div>
+
+  <!-- images -->
+  <img src="images/flying_astronaut.png" alt="Flying Astronaut" class="corner-img top-left">
+  <img src="images/laptop_astronaut.png" alt="Astronaut Using Laptop" class="corner-img top-right">
+  <img src="images/rocket_astronaut.png" alt="Astronaut on Rocket" class="corner-img bottom-left">
+  <img src="images/astronaut_high5.png" alt="2 Astronauts High-Fiving" class="corner-img bottom-right">
+
+  <script src="script.js" defer></script>
+
+  <script>
+    const canvas = document.querySelector('.stars');
+    const ctx = canvas.getContext('2d');
+    function resize() {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+    }
+    window.addEventListener('resize', resize);
+    resize();
+    function drawStars() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      for (let i = 0; i < 120; i++) {
+        ctx.beginPath();
+        ctx.arc(Math.random() * canvas.width, Math.random() * canvas.height, Math.random() * 2 + 1, 0, 2 * Math.PI);
+        ctx.fillStyle = "#fff";
+        ctx.fill();
+      }
+    }
+    drawStars();
+    </script>
+  
+</body>
+</html>

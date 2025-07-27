@@ -1,0 +1,126 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Baloo 2', cursive;
+  background: linear-gradient(135deg, #1e085f, #3b0a75);
+  color: white;
+  overflow-x: hidden;
+}
+
+/* Planet 1 Container */
+.planet.mood-check {
+  min-height: 100vh;
+  padding: 3rem 2rem;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Alien Bot Box */
+.alien-bot {
+  background: rgba(255, 255, 255, 0.08);
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  border-radius: 2rem;
+  padding: 2rem;
+  text-align: center;
+  backdrop-filter: blur(12px);
+  max-width: 520px;
+  box-shadow: 0 0 25px rgba(255, 255, 255, 0.1);
+}
+
+/* Greeting Text */
+.alien-greeting {
+  position: relative;
+  background: rgba(255, 255, 255, 0.15);
+  font-size: 1.9rem;
+  line-height: 1.5;
+  margin: 0 auto 2rem auto;
+  border-radius: 20px;
+  padding: 1.5rem 2rem;
+  color: #fff;
+  max-width: 500px;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+}
+
+.alien-greeting::after {
+  content: '';
+  position: absolute;
+  bottom: -20px;
+  left: 40px;
+  width: 0;
+  height: 0;
+  border: 15px solid transparent;
+  border-top-color: rgba(255, 255, 255, 0.15);
+  filter: drop-shadow(0 0 2px rgba(255, 255, 255, 0.1));
+}
+
+/* Mood Buttons */
+.mood-buttons {
+  display: flex;
+  gap: 1.2rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.mood-buttons button {
+  background: #ff66c4;
+  border: none;
+  border-radius: 50px;
+  padding: 0.9rem 2rem;
+  color: white;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 10px #ff66c4;
+}
+
+.mood-buttons button:hover {
+  background: #ff33aa;
+  transform: scale(1.05);
+  box-shadow: 0 0 20px #ff99dd;
+}
+
+/* Astronaut + Orb Images  */
+.mood-astronaut {
+  position: absolute;
+  bottom: 1rem;
+  left: 1rem;
+  width: 380px;
+}
+
+.mood-orb {
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+  width: 240px;
+  animation: pulse 3s infinite ease-in-out;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.9;
+  }
+  50% {
+    transform: scale(1.1);
+    opacity: 1;
+  }
+}
+
+.space-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+canvas.stars {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
