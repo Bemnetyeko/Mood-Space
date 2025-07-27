@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>MoodSpace</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Chewy&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Chewy', cursive;
+      background: #0d0149;
+      color: #fff;
+      overflow-x: hidden;
+    }
+
+    .header {
+      background: #343cff;
+      padding: 16px 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+    }
+
+    .logo {
+      font-size: 2rem;
+      font-weight: 800;
+      color: #fff;
+    }
+
+    .nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-right: 50px;
+    }
+
+    .nav button {
+      font-family: 'Chewy', cursive;
+      background: #9F8BFF;
+      color: white;
+      border: none;
+      border-radius: 12px;
+      padding: 10px 20px;
+      font-size: 1rem;
+      font-weight: 500;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      transition: background 0.2s;
+    }
+
+    .nav button:hover {
+      background: #b3a2ff;
+    }
+
+    .image-section {
+      width: 100%;
+      margin-top: 100px;
+    }
+
+    .image-section img {
+      width: 100%;
+      height: auto;
+      display: block;
+      margin-bottom: 40px;
+    }
+
+    @media (max-width: 768px) {
+      .logo {
+        font-size: 1.5rem;
+      }
+
+      .nav {
+        justify-content: flex-end;
+      }
+
+      .nav button {
+        padding: 8px 14px;
+        font-size: 0.9rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="header">
+    <div class="logo">MoodSpace</div>
+    <div class="nav">
+      <button><i class="fa fa-home"></i> HOME</button>
+      <button><i class="fa fa-music"></i> MUSIC</button>
+      <button><i class="fa fa-book"></i> BOOKS</button>
+      <button><i class="fa fa-film"></i> MOVIES</button>
+      <button><i class="fa fa-pen"></i> JOURNAL</button>
+      <button><i class="fa fa-lightbulb"></i> RESOURCES</button>
+      <button><i class="fa fa-cog"></i> SETTINGS</button>
+    </div>
+  </div>
+
+  <div class="image-section">
+    <img src="Images/5.png" alt="Books Section" />
+    <img src="Images/6.png" alt="Movies Section" />
+    <img src="Images/Journal.png" alt="Journal Section" />
+  </div>
+
+</body>
+</html>
