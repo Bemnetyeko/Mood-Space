@@ -69,6 +69,7 @@
     .image-section {
       width: 100%;
       margin-top: 100px;
+      text-align: center;
     }
 
     .image-section img {
@@ -76,6 +77,24 @@
       height: auto;
       display: block;
       margin-bottom: 40px;
+    }
+
+    .resource-btn {
+      font-family: 'Chewy', cursive;
+      background: #9F8BFF;
+      color: white;
+      border: none;
+      border-radius: 16px;
+      padding: 14px 30px;
+      font-size: 1.2rem;
+      cursor: pointer;
+      transition: background 0.3s;
+      margin: 40px auto;
+      display: inline-block;
+    }
+
+    .resource-btn:hover {
+      background-color: #b3a2ff;
     }
 
     @media (max-width: 768px) {
@@ -91,6 +110,11 @@
         padding: 8px 14px;
         font-size: 0.9rem;
       }
+
+      .resource-btn {
+        font-size: 1rem;
+        padding: 12px 24px;
+      }
     }
   </style>
 </head>
@@ -104,15 +128,20 @@
       <button><i class="fa fa-book"></i> BOOKS</button>
       <button><i class="fa fa-film"></i> MOVIES</button>
       <button><i class="fa fa-pen"></i> JOURNAL</button>
-      <button><i class="fa fa-lightbulb"></i> RESOURCES</button>
       <button><i class="fa fa-cog"></i> SETTINGS</button>
     </div>
   </div>
 
   <div class="image-section">
+    <img src="Images/aboutus.png" alt="About Us Section" />
     <img src="Images/5.png" alt="Books Section" />
     <img src="Images/6.png" alt="Movies Section" />
     <img src="Images/Journal.png" alt="Journal Section" />
+
+    <!-- Resources Button -->
+    <a href="resources.html">
+      <button class="resource-btn"><i class="fa fa-lightbulb"></i> RESOURCES</button>
+    </a>
   </div>
 
 </body>
