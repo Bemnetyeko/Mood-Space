@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mood Space</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Chewy&display=swap" rel="stylesheet">
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+    body {
+      font-family: 'Chewy', cursive;
+      background-color: #0b033d;
+    }
+    .space-bg {
+      position: fixed;
+      width: 100vw;
+      height: 100vh;
+      top: 0;
+      left: 0;
+      z-index: 0;
+      overflow: hidden;
+    }
+    canvas.stars {
+      width: 100%;
+      height: 100%;
+      display: block;
+    }
+  </style>
+</head>
+<body class="text-white relative overflow-x-hidden">
+
+  <!-- Starry Background -->
+  <div class="space-bg">
+    <canvas class="stars"></canvas>
+  </div>
+
+  <!-- Hero/Home Section -->
+  <section class="min-h-screen flex flex-col items-center justify-center text-white relative z-10 text-center px-4">
+    <!-- Astronauts -->
+    <img src="Images/Astronaut watching.png" alt="Astronaut Watching TV" class="absolute top-10 left-10 w-36 sm:w-44 md:w-52 z-10">
+    <img src="Images/Astronaut on pencil.png" alt="Astronaut on Pencil" class="absolute top-10 right-10 w-32 sm:w-40 md:w-48 z-10">
+    <img src="Images/Astronaut with headphones.png" alt="Astronaut with Headphones" class="absolute bottom-14 left-10 w-36 sm:w-44 md:w-52 z-10">
+    <img src="Images/Astronaut reading.png" alt="Astronaut Reading" class="absolute bottom-10 right-10 w-36 sm:w-44 md:w-52 z-10">
+
+    <!-- Main Text -->
+    <h1 class="text-6xl sm:text-7xl md:text-8xl text-purple-300 mb-10">Mood Space</h1>
+    <p class="text-2xl sm:text-3xl md:text-4xl font-semibold">DREAM DECODERS</p>
+    <div class="flex flex-col sm:flex-row justify-center gap-4 sm:gap-6 mt-6">
+      <a href="#auth" class="px-6 py-3 text-lg border-2 border-blue-500 rounded-lg hover:bg-blue-500 transition text-center">LOG IN</a>
+      <a href="#auth" class="px-6 py-3 text-lg bg-blue-600 rounded-lg hover:bg-blue-700 transition text-center">SIGN UP</a>
+    </div>
+  </section>
+
+  <!-- Login/Signup Section -->
+  <section id="auth" class="min-h-screen w-full bg-[#0b033d] text-white flex flex-col items-center justify-center relative px-4 py-12 z-10">
+    <div class="w-full max-w-5xl bg-white bg-opacity-10 backdrop-blur-md rounded-3xl p-8 sm:p-12 flex flex-col lg:flex-row justify-between gap-8 z-10">
+
+      <!-- Login -->
+      <div class="flex-1 space-y-4 text-center">
+        <h2 class="text-3xl sm:text-4xl text-purple-300 mb-4">LOG IN</h2>
+        <input type="email" placeholder="Enter Email" class="w-full px-6 py-3 rounded-full bg-purple-300 bg-opacity-30 placeholder-white text-white"/>
+        <input type="password" placeholder="Enter Password" class="w-full px-6 py-3 rounded-full bg-purple-300 bg-opacity-30 placeholder-white text-white"/>
+        <a href="About_page.html" class="bg-blue-600 hover:bg-blue-700 text-white py-3 px-6 rounded-lg inline-block mt-4">SUBMIT</a>
+      </div>
+
+      <!-- Sign Up -->
+      <div class="flex-1 space-y-4 text-center">
+        <h2 class="text-3xl sm:text-4xl text-purple-300 mb-4">SIGN UP</h2>
+        <input type="text" placeholder="Enter Name" class="w-full px-6 py-3 rounded-full bg-purple-300 bg-opacity-30 placeholder-white text-white"/>
+        <input type="email" placeholder="Enter Email" class="w-full px-6 py-3 rounded-full bg-purple-300 bg-opacity-30 placeholder-white text-white"/>
+        <input type="password" placeholder="Enter Password" class="w-full px-6 py-3 rounded-full bg-purple-300 bg-opacity-30 placeholder-white text-white"/>
+        <input type="password" placeholder="Confirm Password" class="w-full px-6 py-3 rounded-full bg-purple-300 bg-opacity-30 placeholder-white text-white"/>
+        <a href="About_page.html" class="bg-blue-600 hover:bg-blue-700 text-white py-3 px-6 rounded-lg inline-block mt-4">SIGN UP</a>
+      </div>
+    </div>
+
+    <!-- Extra Astronauts -->
+    <img src="Images/Astronaut with music.png" class="absolute top-6 left-6 w-24 sm:w-32" alt="Astronaut with headphones">
+    <img src="Images/happy astronaut.png" class="absolute bottom-6 right-6 w-24 sm:w-32" alt="Happy astronaut">
+  </section>
+
+  <!-- Star Drawing Script -->
+  <script>
+    const canvas = document.querySelector('.stars');
+    const ctx = canvas.getContext('2d');
+
+    function resize() {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+    }
+
+    window.addEventListener('resize', resize);
+    resize();
+
+    function drawStars() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      for (let i = 0; i < 120; i++) {
+        ctx.beginPath();
+        ctx.arc(Math.random() * canvas.width, Math.random() * canvas.height, Math.random() * 2 + 1, 0, 2 * Math.PI);
+        ctx.fillStyle = "#fff";
+        ctx.fill();
+      }
+    }
+
+    drawStars();
+  </script>
+
+</body>
+</html>
